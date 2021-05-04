@@ -14,4 +14,8 @@ export class CustomerService {
   login(customer:Customer):Observable<LoginStatus>{
     return this.httpClient.post<LoginStatus>("http://localhost:8181/login",customer);
   }
+
+  register(customer:Customer):Observable<Customer> {
+    return this.httpClient.post<Customer>("http://localhost:8181/register",customer);
+  }
 }
