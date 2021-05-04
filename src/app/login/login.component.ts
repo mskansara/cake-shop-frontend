@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
           }
           else{
             localStorage.setItem('customerId', String(response.customerId));
+            localStorage.setItem('customerName', String(response.name));
             Swal.fire({
               title: "Login Success",
                text:"You are ready to buy some delicious desserts",
