@@ -21,10 +21,10 @@ export class CustomerService {
   }
 
   addCategory(category:Category):Observable<Category> {
-    return this.httpClient.post<Category>("",category);
+    return this.httpClient.post<Category>("http://localhost:8181/addCategory",category);
   }
 
   addProduct(product:FormData):Observable<any> {
-    return this.httpClient.post<any>("",product);
+    return this.httpClient.post<any>("http://localhost:8181/addProduct",product);
   }
 }
