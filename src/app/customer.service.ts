@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Customer } from './app-model/customer';
 import { LoginStatus } from './app-model/login-status';
+import { Category } from './app-model/category';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +18,13 @@ export class CustomerService {
 
   register(customer:Customer):Observable<Customer> {
     return this.httpClient.post<Customer>("http://localhost:8181/register",customer);
+  }
+
+  addCategory(category:Category):Observable<Category> {
+    return this.httpClient.post<Category>("",category);
+  }
+
+  addProduct(product:FormData):Observable<any> {
+    return this.httpClient.post<any>("",product);
   }
 }
