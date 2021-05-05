@@ -12,3 +12,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-family: "Poppins-Regular";
     src: local("Poppins-Regular"), url(./assets/fonts/Poppins/Poppins-Regular.ttf) format("truetype");
 }
+
+@font-face {
+    font-family: "Poppins-Medium";
+    src: local("Poppins-Medium"), url(./assets/fonts/Poppins/Poppins-Medium.ttf) format("truetype");
+}
