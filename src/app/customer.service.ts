@@ -27,4 +27,8 @@ export class CustomerService {
   addProduct(product:FormData):Observable<any> {
     return this.httpClient.post<any>("http://localhost:8181/addProduct",product);
   }
+
+  fetchCategoryNames():Observable<String[]> {
+    return this.httpClient.get<String[]>("http://localhost:8181/fetchCategory");
+  }
 }

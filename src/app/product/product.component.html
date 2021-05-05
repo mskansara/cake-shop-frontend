@@ -47,11 +47,7 @@
         <div class="form-group">
             <label for="category">Category</label>
             <select class="form-control" id="category" (change)="onDataChange($event)">
-              <option value="Cake" selected>Cake</option>
-              <option value="Brownies">Brownies</option>
-              <option value="Cupckake">Cupckake</option>
-              <option value="Cakejar">Cakejar</option>
-              <option value="Tarts">Tarts</option>
+              <option *ngFor="let c of categories" value={{c}}>{{c}}</option>
             </select>
         </div>
         <div class="form-group">

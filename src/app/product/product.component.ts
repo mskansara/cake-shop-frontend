@@ -11,11 +11,19 @@ import { CustomerService } from '../customer.service';
 export class ProductComponent implements OnInit {
   category:Category = new Category();
   product:Product = new Product();
+  categories:String[];
   constructor(private service:CustomerService) { }
 
   ngOnInit(): void {
     this.product.categoryName = 'Cake';
     console.log(this.product.categoryName);
+    this.service.fetchCategoryNames().subscribe(
+      response=> {
+        console.log(response);
+        this.categories = response;
+        console.log(this.categories);
+      }
+    )
   }
 
   onFileChange(event) {
