@@ -33,62 +33,75 @@
       <span class="carousel-control-next-icon"></span>
     </a>
 </div>
+<br><br>
 
   <!-- Cards of products -->
 <div class="container">
-    <h2>Experience these Amazing Categories</h2>
-    <div class="card-deck">
-        <div class="card" (click)="selectCategory('Cake')">
-        <div class="card-body text-center">
-            <img class="card-img-top" src="./assets/images/pastry.jfif" alt="Card image" width=80%>
-            <p class="card-text">Cakes</p>
+    <h2>Explore these amazing categories</h2>
+    <div class="row">
+        <div class="col-12">
+            <div class="card-deck">
+                <div *ngFor="let c of categoryNames" class="col col-lg-4 col-sm-12">
+                    <div class="card" (click)="selectCategory(c)">
+                        <div class="card-body text-center">
+                            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
+                            <p class="card-text">{{c}}</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col col-lg-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
+                            <p class="card-text">Product Name</p>
+                            <p class="card-text">Product Description</p>
+                            <button class="btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
+                            <p class="card-text">Product Name</p>
+                            <p class="card-text">Product Description</p>
+                            <button class="btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
+                            <p class="card-text">Product Name</p>
+                            <p class="card-text">Product Description</p>
+                            <button class="btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
+                            <p class="card-text">Product Name</p>
+                            <p class="card-text">Product Description</p>
+                            <button class="btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
+                            <p class="card-text">Product Name</p>
+                            <p class="card-text">Product Description</p>
+                            <button class="btn btn-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
         </div>
-        </div>
-        <div class="card" (click)="selectCategory('Cupcakes')">
-        <div class="card-body text-center">
-            <img class="card-img-top" src="./assets/images/cup.jpg" alt="Card image" style="width:100%;height:210px">
-            <p class="card-text">Cupcakes</p>
-        </div>
-        </div>
-        <div class="card">
-        <div class="card-body text-center">
-            <img class="card-img-top" src="./assets/images/redvelvet.jpg" alt="Card image" style="width:100%">
-            <p class="card-text">Jarcake</p>
-        </div>
-        </div>
-        <div class="card">
-        <div class="card-body text-center">
-            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
-            <p class="card-text">Pinata Cake</p>
-        </div>
-        </div>  
-    </div>
-
-    <div class="card-deck">
-        <div class="card">
-        <div class="card-body text-center">
-            <img class="card-img-top" src="./assets/images/pastry.jfif" alt="Card image" width=80%>
-            <p class="card-text">Cakes</p>
-        </div>
-        </div>
-        <div class="card">
-        <div class="card-body text-center">
-            <img class="card-img-top" src="./assets/images/cup.jpg" alt="Card image" style="width:100%;height:210px">
-            <p class="card-text">Cupcakes</p>
-        </div>
-        </div>
-        <div class="card">
-        <div class="card-body text-center">
-            <img class="card-img-top" src="./assets/images/redvelvet.jpg" alt="Card image" style="width:100%">
-            <p class="card-text">Jarcake</p>
-        </div>
-        </div>
-        <div class="card">
-        <div class="card-body text-center">
-            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
-            <p class="card-text">Pinata Cake</p>
-        </div>
-        </div>  
     </div>
 </div>
   

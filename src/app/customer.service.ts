@@ -33,6 +33,6 @@ export class CustomerService {
   }
 
   fetchProducts(category:string):Observable<any> {
-    return this.httpClient.get<any>("");
+    return this.httpClient.get<any>(`http://localhost:8181/fetchProducts?categoryName=${category}`);
   }
 }
