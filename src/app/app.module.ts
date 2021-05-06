@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductComponent } from './product/product.component';
+import { ProductCatalogueComponent } from './product-catalogue/product-catalogue.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProductComponent } from './product/product.component';
     HomeComponent,
     RegisterComponent,
     NavbarComponent,
-    ProductComponent
+    ProductComponent,
+    ProductCatalogueComponent
   ],
   imports: [
     BrowserModule,

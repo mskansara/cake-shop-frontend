@@ -31,4 +31,8 @@ export class CustomerService {
   fetchCategoryNames():Observable<String[]> {
     return this.httpClient.get<String[]>("http://localhost:8181/fetchCategory");
   }
+
+  fetchProducts(category:string):Observable<any> {
+    return this.httpClient.get<any>("");
+  }
 }
