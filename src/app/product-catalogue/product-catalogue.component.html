@@ -26,7 +26,12 @@
 </div> -->
 
 <div class="container">
-    <h1>Selected Category - {{category}}</h1>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li class="breadcrumb-item active"><a>{{category}}</a></li>
+        </ol>
+      </nav>
     <div class="row">
         <div class="col-12">
             <div class="card-deck">
