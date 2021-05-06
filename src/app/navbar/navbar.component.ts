@@ -26,7 +26,9 @@ export class NavbarComponent implements OnInit {
   logout() {
     localStorage.removeItem('customerId');
     localStorage.removeItem('customerName');
+    this.ngOnInit();
     this.router.navigateByUrl('/');
+    
   }
 
 }

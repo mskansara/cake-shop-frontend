@@ -29,7 +29,8 @@ export class RegisterComponent implements OnInit {
               icon: "success",
               confirmButtonText: "Okay"
           });
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']);
+          this.ngOnInit();
         } else {
           Swal.fire({
             title: "Registration Failed",

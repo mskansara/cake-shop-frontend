@@ -41,6 +41,7 @@ export class ProductComponent implements OnInit {
     this.service.addCategory(this.category).subscribe(
       response=> {
         console.log(response);
+        this.ngOnInit();
       }
     )
   }
@@ -56,6 +57,7 @@ export class ProductComponent implements OnInit {
     this.service.addProduct(formData).subscribe(
       response=> {
         console.log(response);
+        this.ngOnInit();
       }
     )
 
