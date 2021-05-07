@@ -16,25 +16,26 @@ h2{
 }
 .btn{
     width: 20%;
+    margin-left: 2%; 
     margin-bottom: 5%;
-    margin-left: 2%;
     background-color: #008080;
     color: white;
     font-family: 'Poppins-Regular';
 }
 input, label{
     font-family: 'Poppins-Medium';
-    width: 80%;
+    width: 95%;
     margin-left: 2%;
-    padding-left: 2%;
+    /* margin-right: 2%; */
+    padding-left: 2%; 
 }
 .card-custom {
     font-family: 'Poppins-Regular';
     overflow: hidden;
     height: fit-content;
-    width: 50%;
-    margin-top: 5%;
-    margin-left: 20%;
+    margin-top: 5%; 
+    /* width: 50%;
+    margin-left: 20%; */
     box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
   }
   

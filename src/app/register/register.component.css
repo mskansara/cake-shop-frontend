@@ -49,7 +49,7 @@ h2{
 }
 input, label{
     font-family: 'Poppins-Medium';
-    width: 80%;
+    width: 95%;
     margin-left: 2%;
     padding-left: 2%;
 }
@@ -57,9 +57,7 @@ input, label{
     font-family: 'Poppins-Regular';
     overflow: auto;
     height: fit-content;
-    width: 60%;
     margin-top: 5%;
-    margin-left: 20%;
     box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
   }
   
