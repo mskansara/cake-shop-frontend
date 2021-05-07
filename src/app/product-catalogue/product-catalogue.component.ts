@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Cartitemdto } from '../app-model/cartitemdto';
+import { Product } from '../app-model/product';
 import { Products } from '../app-model/products';
 import { CustomerService } from '../customer.service';
 
@@ -11,6 +13,7 @@ import { CustomerService } from '../customer.service';
 export class ProductCatalogueComponent implements OnInit {
   category;
   products:Array<Products> = new Array();
+  cartItemDto:Cartitemdto = new Cartitemdto();
   constructor(private router:Router, private route:ActivatedRoute, private service:CustomerService) {
     
   }
@@ -25,6 +28,18 @@ export class ProductCatalogueComponent implements OnInit {
 
       }
     )
+  }
+
+  addToCart(product:Products) {
+    this.cartItemDto.customerId = Number(localStorage.getItem('customerId'));
+    this.cartItemDto.productId = product.productId;
+    this.cartItemDto.quantity = 1;
+    this.service.addToCart(this.cartItemDto).subscribe(
+      response=> {
+        console.log(response);
+      }
+    )
+    
   }
 
 }

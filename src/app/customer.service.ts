@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Customer } from './app-model/customer';
 import { LoginStatus } from './app-model/login-status';
 import { Category } from './app-model/category';
+import { Cartitemdto } from './app-model/cartitemdto';
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +35,9 @@ export class CustomerService {
 
   fetchProducts(category:string):Observable<any> {
     return this.httpClient.get<any>(`http://localhost:8181/fetchProducts?categoryName=${category}`);
+  }
+
+  addToCart(cartItemDto:Cartitemdto):Observable<any> {
+    return this.httpClient.post<any>('http://localhost:8181/addToCart',cartItemDto);
   }
 }

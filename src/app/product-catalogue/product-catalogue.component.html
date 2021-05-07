@@ -42,7 +42,7 @@
                             <p class="card-text">{{product.name}}</p>
                             <p class="card-text">{{product.description}}</p>
                             <p class="card-text">Rs.{{product.unitPrice}}</p>
-                            <button class="btn btn-primary">Add To Cart</button>
+                            <button class="btn btn-primary" (click)="addToCart(product)">Add To Cart</button>
                         </div>
                     </div>
                 </div>
