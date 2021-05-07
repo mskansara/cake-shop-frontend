@@ -1,0 +1,23 @@
+<div class="container" style="margin-top: 5%;">
+    
+    <div class="row">
+        <div class="card col col-lg-10 offset-lg-1">
+            <h2 style="text-align: center;">Cart Item</h2>
+            <ul class="list-group">
+                <li *ngFor="let item of cart" class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                      <h6 class="my-0">{{item.product.name}}</h6>
+                      <small class="text-muted">{{item.product.description}}</small><br>
+                      <h6>Quantity: {{item.quantity}}</h6>
+
+                    </div>
+                    <span class="text-muted">Rs. {{item.product.unitPrice}}</span>
+                </li>
+                
+              </ul>
+              <br>
+              <button class="col col-lg-2 offset-lg-5 btn btn-primary">Place Order</button> <br>
+        </div>
+    </div>
+    
+</div>
