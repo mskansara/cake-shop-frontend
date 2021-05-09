@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cart } from '../app-model/cart';
 import { OrderDto } from '../app-model/order-dto';
 import { CustomerService } from '../customer.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -13,6 +13,7 @@ export class CheckoutComponent implements OnInit {
   cartLength;
   finalAmount;
   cart:Array<Cart> = new Array<Cart>();
+  cartId:number;
   orderDto:OrderDto = new OrderDto();
   today;
   pincode:string;
@@ -23,7 +24,8 @@ export class CheckoutComponent implements OnInit {
     this.service.fetchCart(this.customerId).subscribe(
       response=> {
         console.log(response);
-        this.cart = response;
+        this.cartId = response.cartId;
+        this.cart = response.cartItems;
         this.cartLength = this.cart.length;
         this.finalAmount = this.calculateFinalAmount(this.cart);
         this.orderDto.deliveryTime = "9AM-10AM";
@@ -50,14 +52,21 @@ export class CheckoutComponent implements OnInit {
   }
 
   placeOrder() {
-    this.orderDto.cartId = this.cart[0].cart.cartId;
+    this.orderDto.cartId = this.cartId;
     this.orderDto.customerId = Number(localStorage.getItem('customerId'));
     this.orderDto.amount = this.finalAmount;
-    this.orderDto.shippingAddress += 
+    this.orderDto.shippingAddress;
     console.log(this.orderDto);
     this.service.placeOrder(this.orderDto).subscribe(
       response=> {
         console.log(response);
+        Swal.fire({
+          title: "Order Placed",
+          text:"Your order has been placed successfully",
+          icon: "success",
+          confirmButtonText: "Okay"
+        })
+
       }
     )
   }
