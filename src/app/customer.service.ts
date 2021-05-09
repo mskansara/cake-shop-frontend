@@ -7,6 +7,7 @@ import { Category } from './app-model/category';
 import { Cartitemdto } from './app-model/cartitemdto';
 import { Products } from './app-model/products';
 import { Cart } from './app-model/cart';
+import { OrderDto } from './app-model/order-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +46,9 @@ export class CustomerService {
 
   fetchCart(customerId:number):Observable<Cart[]> {
     return this.httpClient.get<Cart[]>(`http://localhost:8181/displayCartItems?customerId=${customerId}`)
+  }
+
+  placeOrder(orderDto:OrderDto):Observable<any> {
+    return this.httpClient.post<any>('http://localhost:8181/placeOrder',orderDto)
   }
 }
