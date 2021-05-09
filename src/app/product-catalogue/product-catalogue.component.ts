@@ -5,6 +5,8 @@ import { Cartitemdto } from '../app-model/cartitemdto';
 import { Product } from '../app-model/product';
 import { Products } from '../app-model/products';
 import { CustomerService } from '../customer.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-product-catalogue',
@@ -34,52 +36,21 @@ export class ProductCatalogueComponent implements OnInit {
 
   addToCart(product:Products) {
     var flag=false;
-    this.service.fetchCart(Number(localStorage.getItem('customerId'))).subscribe(
+    console.log(product);
+    this.cartItemDto.customerId = Number(localStorage.getItem('customerId'));
+    this.cartItemDto.productId = product.productId;
+    this.cartItemDto.quantity = 1;
+    this.service.addToCart(this.cartItemDto).subscribe(
       response=> {
-        if(response!=null) {
-          response.forEach(element => {
-            if(element.product.productId == product.productId) {
-              this.cartItemDto.customerId = Number(localStorage.getItem('customerId'));
-              this.cartItemDto.productId = element.product.productId;
-              this.cartItemDto.cartId = element.cart.cartId;
-              console.log(element.cart.cartId)
-              this.cartItemDto.cartItemId = element.cartItemId;
-              this.cartItemDto.quantity = element.quantity+1;
-              this.service.addToCart(this.cartItemDto).subscribe(
-                  response=> {
-                    console.log(response);
-                    
-                    
-                  }
-              )
-              flag = true;
-            }
-            
-          })
-          if(flag == false) {
-            this.cartItemDto.customerId = Number(localStorage.getItem('customerId'));
-            this.cartItemDto.cartId = response[0].cart.cartId;
-            this.cartItemDto.productId = product.productId;
-            this.cartItemDto.quantity = 1;
-            this.service.addToCart(this.cartItemDto).subscribe(
-              response=> {
-                console.log(response);
-              }
-            )
-          }
-        } else {
-          this.cartItemDto.customerId = Number(localStorage.getItem('customerId'));
-          this.cartItemDto.productId = product.productId;
-          this.cartItemDto.quantity = 1;
-          this.service.addToCart(this.cartItemDto).subscribe(
-            response=> {
-              console.log(response);
-            }
-          )
-        }
+        console.log(response);
+        Swal.fire({
+          title: "Product Added",
+          text:"Product added to cart",
+          icon: "success",
+          confirmButtonText: "Okay"
+        })
       }
     )
-   
     
   }
 

@@ -9,15 +9,16 @@ import { CustomerService } from '../customer.service';
 })
 export class CartComponent implements OnInit {
   customerId;
-  cart:Array<Cart> = new Array<Cart>();
+  cart:any;
+  cartItems:Array<any> = new Array<any>();
   constructor(private service:CustomerService) { }
 
   ngOnInit(): void {
     this.customerId = Number(localStorage.getItem('customerId'));
     this.service.fetchCart(this.customerId).subscribe(
       response=> {
-        console.log(response);
-        this.cart = response;
+        console.log(response.cartItems);
+        this.cartItems = response.cartItems;
       }
     )
 

@@ -44,8 +44,8 @@ export class CustomerService {
     return this.httpClient.post<any>('http://localhost:8181/addToCart',cartItemDto);
   }
 
-  fetchCart(customerId:number):Observable<Cart[]> {
-    return this.httpClient.get<Cart[]>(`http://localhost:8181/displayCartItems?customerId=${customerId}`)
+  fetchCart(customerId:number):Observable<any> {
+    return this.httpClient.get<any>(`http://localhost:8181/displayCartItems?customerId=${customerId}`)
   }
 
   placeOrder(orderDto:OrderDto):Observable<any> {

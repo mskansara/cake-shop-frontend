@@ -17,3 +17,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-family: "Poppins-Medium";
     src: local("Poppins-Medium"), url(./assets/fonts/Poppins/Poppins-Medium.ttf) format("truetype");
 }
+
+p {
+    font-family: "Poppins-Regular";
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins-Regular";
+}
+
+label {
+    font-family: "Poppins-Regular" !important;
+}
+
+input::placeholder {
+    font-family: "Poppins-Regular";
+}
