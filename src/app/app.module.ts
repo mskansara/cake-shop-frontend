@@ -15,6 +15,9 @@ import { ProductCatalogueComponent } from './product-catalogue/product-catalogue
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ViewOrderComponent } from './view-order/view-order.component';
+import { FooterComponent } from './footer/footer.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -27,14 +30,17 @@ import { ViewOrderComponent } from './view-order/view-order.component';
     ProductCatalogueComponent,
     CartComponent,
     CheckoutComponent,
-    ViewOrderComponent
+    ViewOrderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

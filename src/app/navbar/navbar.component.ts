@@ -21,7 +21,11 @@ export class NavbarComponent implements OnInit {
       this.isLoggedIn = true;
       this.service.fetchCart(this.customerId).subscribe(
         response=> {
-          this.cartLength = response.cartItems.length;
+          if(response == null) {
+            this.cartLength = 0;
+          } else {
+            this.cartLength = response.cartItems.length;
+          }
         }
       )
     } else {
