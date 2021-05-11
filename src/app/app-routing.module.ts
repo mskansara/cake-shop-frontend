@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ProductCatalogueComponent } from './product-catalogue/product-catalogue.component';
 import { ProductComponent } from './product/product.component';
 import { RegisterComponent } from './register/register.component';
+import { ViewOrderComponent } from './view-order/view-order.component';
 
 const routes: Routes = [
   { 
@@ -29,6 +30,9 @@ const routes: Routes = [
   },
   {
     path: "cart", component:CartComponent
+  },
+  {
+    path: "viewOrders", component: ViewOrderComponent
   },
   {
     path: "checkout", component:CheckoutComponent

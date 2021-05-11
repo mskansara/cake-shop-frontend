@@ -14,6 +14,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductCatalogueComponent } from './product-catalogue/product-catalogue.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ViewOrderComponent } from './view-order/view-order.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ProductComponent,
     ProductCatalogueComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ViewOrderComponent
   ],
   imports: [
     BrowserModule,

@@ -45,10 +45,14 @@ export class CustomerService {
   }
 
   fetchCart(customerId:number):Observable<any> {
-    return this.httpClient.get<any>(`http://localhost:8181/displayCartItems?customerId=${customerId}`)
+    return this.httpClient.get<any>(`http://localhost:8181/displayCartItems?customerId=${customerId}`);
   }
 
   placeOrder(orderDto:OrderDto):Observable<any> {
     return this.httpClient.post<any>('http://localhost:8181/placeOrder',orderDto)
+  }
+
+  fetchOrder(customerId:number):Observable<any> {
+    return this.httpClient.get<any>(`http://localhost:8181/viewOrders?customerId=${customerId}`);
   }
 }

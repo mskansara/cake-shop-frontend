@@ -3,6 +3,7 @@ import { Cart } from '../app-model/cart';
 import { OrderDto } from '../app-model/order-dto';
 import { CustomerService } from '../customer.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -17,7 +18,7 @@ export class CheckoutComponent implements OnInit {
   orderDto:OrderDto = new OrderDto();
   today;
   pincode:string;
-  constructor(private service:CustomerService) { }
+  constructor(private service:CustomerService, private router:Router) { }
 
   ngOnInit(): void {
     this.customerId = Number(localStorage.getItem('customerId'));
@@ -57,6 +58,7 @@ export class CheckoutComponent implements OnInit {
     this.orderDto.amount = this.finalAmount;
     this.orderDto.shippingAddress;
     console.log(this.orderDto);
+    this.router.navigateByUrl('/viewOrders');
     this.service.placeOrder(this.orderDto).subscribe(
       response=> {
         console.log(response);
