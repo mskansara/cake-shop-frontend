@@ -13,15 +13,15 @@
     <!-- The slideshow -->
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="./assets/images/hazelnut.png" alt="Cake" width="100%" height="600px">
+            <img src="./assets/images/cake-background-laptop-244562.jpg" alt="Cake" width="100%" height="600px">
         </div>
         
         <div class="carousel-item">
-            <img src="./assets/images/cupcake.jpg" alt="Cupcake" width="100%" height="600px">
+            <img src="./assets/images/cupcakes.jpg" alt="Cupcake" width="100%" height="600px">
         </div>
         
         <div class="carousel-item">
-            <img src="./assets/images/brownie.jpg" alt="Brownie" width="100%" height="600px">
+            <img src="./assets/images/bake-sale.jpg" alt="Brownie" width="100%" height="600px">
         </div>
     </div>
     
@@ -37,70 +37,77 @@
 
   <!-- Cards of products -->
 <div class="container">
-    <h2>Explore these amazing categories</h2>
+    <h2 style="color: #008080;">Explore these amazing categories</h2><br>
     <div class="row">
         <div class="col-12">
             <div class="card-deck">
                 <div *ngFor="let c of categoryNames" class="col col-lg-4 col-sm-12">
                     <div class="card" (click)="selectCategory(c)">
                         <div class="card-body text-center">
-                            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
+                            <img class="card-img-top" src="../../assets/images/categories/{{c}}.jpg" alt="Card image" style="width:100%;height:210px">
                             <p class="card-text">{{c}}</p>
                             
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col col-lg-4 col-sm-12">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
-                            <p class="card-text">Product Name</p>
-                            <p class="card-text">Product Description</p>
-                            <button class="btn btn-primary">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-lg-4 col-sm-12">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
-                            <p class="card-text">Product Name</p>
-                            <p class="card-text">Product Description</p>
-                            <button class="btn btn-primary">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-lg-4 col-sm-12">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
-                            <p class="card-text">Product Name</p>
-                            <p class="card-text">Product Description</p>
-                            <button class="btn btn-primary">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-lg-4 col-sm-12">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
-                            <p class="card-text">Product Name</p>
-                            <p class="card-text">Product Description</p>
-                            <button class="btn btn-primary">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-lg-4 col-sm-12">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <img class="card-img-top" src="./assets/images/pinata.jpg" alt="Card image" style="width:100%;height:210px">
-                            <p class="card-text">Product Name</p>
-                            <p class="card-text">Product Description</p>
-                            <button class="btn btn-primary">Add To Cart</button>
-                        </div>
-                    </div>
-                </div> -->
             </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+<div class="container">
+    <div class="row" id="about">
+        <div class="col col-lg-5" style="margin-top: 10%;">
+        <img src="../../assets/images/about.jpg" alt="" style="border-radius: 20px;">
+        </div>
+        <div class="col col-lg-7 col-sm-12 col-md-12" style="text-align: justify;">
+            <h2 style="color: #008080;">About Us</h2><br>
+            <p style="font-family: 'Poppins-Italic';">We are exactly what you are looking for. Yes, we are an FSSAI certified online cake and Bakery Company that specializes in delivering absolutely lip-smacking delicacies. Currently, we are delivering cakes in Gurgaon, Delhi, Noida, Ghaziabad, Bangalore and Hyderabad. We are not just a bakery, we are not just bakers. In fact, we are just like you, a bunch of food lovers fascinated with sweet indulgence, who dreamt of creating an appetizing fairy land of divine delicacies that relishes the utmost desires</p>
+            <h5 style="font-family: 'Poppins-Medium';">Variety And Flavors Of Cakes To Make You Surrender Your Senses</h5>
+            <p style="font-family: 'Poppins-Italic';">
+                Bakingo’s online cake delivery offers you a huge range of cakes baked with utmost perfection and the finest quality of ingredients. Cakes available in our bakery are always fresh, soft, moist, mushy and fluffy in texture. We have flavorsome cakes to illuminate your every occasion. Be it a birthday, wedding, anniversary, Valentine's day, Mother's day or any other event, our cakes will never disappoint you. These hard-to-resist delicacies are available in a plethora of flavors like <span style="color:red;"> Red Velvet, Butterscotch, Strawberry, Chocolate, Vanilla, Blueberry, Pineapple, Kiwi, Coffee, Mango, Ferrero Rocher, Kit-kat, Oreo </span> and many more. Since no one can say ‘No’ to chocolates, we have come up with a variety of chocolate cakes among which 'Double-Trouble', 'Alive by Chocolate' and Rocher Rejoice with just leave your mouth water. If you are a fruit lover, then you must try our extremely delicious Red Velvet fruit cake enriched with fruits and adorned with whipped cream. So, if there is a huge celebration waiting up next in your calendar, order a cake online from us and brighten up your celebration with our irresistible yummylicious treats. Our online cake delivery service promise to deliver on the same day.
+            </p>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+
+<div class="container" style="margin-bottom: 2%;">
+    <div class="row" id="contact">
+        <div class="col col-lg-7 col-sm-12">
+            <h2 style="color: #008080;">Contact Us</h2>
+            <form action="#">
+                <div class="row">
+                    <div class="col col-lg-6">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-control">
+                    </div>
+                    <div class="col col-lg-6">
+                        <label for="mobile">Your Number</label>
+                        <input type="text" id="mobile" name="mobile" class="form-control">
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col col-lg-12">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" class="form-control">
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col col-lg-12">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" cols="30" rows="5" class="form-control"></textarea>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-dark">Send Message</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col col-lg-5">
+            <img src="../../assets/images/contactimage.png" alt="" height="500px" width="100%">
         </div>
     </div>
 </div>
