@@ -10,34 +10,43 @@ import { CustomerService } from '../customer.service';
 export class NavbarComponent implements OnInit {
   customerId;
   name;
-  isLoggedIn:boolean = false;
+  isLoggedIn:boolean;
   cartLength;
   constructor(private router:Router, private service:CustomerService) { }
 
   ngOnInit(): void {
     this.customerId = localStorage.getItem('customerId');
-    this.name = localStorage.getItem('customerName');
-    if(this.customerId != null) {
-      this.isLoggedIn = true;
-      this.service.fetchCart(this.customerId).subscribe(
-        response=> {
-          if(response == null) {
-            this.cartLength = 0;
-          } else {
-            this.cartLength = response.cartItems.length;
-          }
+    this.service.currentStatus.subscribe(
+      response=> {
+        // console.log(response);
+        this.isLoggedIn = response;
+        console.log(response);
+        if(response == true || localStorage.getItem('customerId')!=null) {
+          this.customerId = localStorage.getItem('customerId');
+          this.name = localStorage.getItem('customerName');
+          console.log(this.customerId);
+          this.service.fetchCart(this.customerId).subscribe(
+            response=> {
+              if(response == null) {
+                this.cartLength = 0;
+              } else {
+                this.cartLength = response.cartItems.length;
+              }
+            }
+          )
+        } else {
+          this.isLoggedIn = false
+          this.cartLength = 0
         }
-      )
-    } else {
-      this.isLoggedIn = false
-      this.cartLength = 0
-    }
-    console.log(this.customerId);
+      }
+    )
+    
   }
 
   logout() {
     localStorage.removeItem('customerId');
     localStorage.removeItem('customerName');
+    this.service.changeStatus(false);
     this.ngOnInit();
     this.router.navigateByUrl('/');
     

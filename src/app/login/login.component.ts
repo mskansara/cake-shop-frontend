@@ -17,9 +17,16 @@ export class LoginComponent implements OnInit {
   email: String = "";
   password: String = "";
   message: String;
+  isLoggedIn:boolean;
   constructor(private service: CustomerService, private router: Router) { }
 
   ngOnInit(): void {
+    this.service.currentStatus.subscribe(
+      response => {
+        this.isLoggedIn = response;
+      }
+    )
+
   }
   login(loginForm: NgForm){
       // this.customer.email = this.email;
@@ -47,7 +54,11 @@ export class LoginComponent implements OnInit {
                icon: "success",
                confirmButtonText: "Okay"
            });
+           this.service.changeStatus(true);
            this.router.navigate(['/']);
+          //  window.location.replace('/');
+           
+           
           }
         }
       )

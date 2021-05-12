@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Customer } from './app-model/customer';
 import { LoginStatus } from './app-model/login-status';
 import { Category } from './app-model/category';
@@ -13,6 +13,16 @@ import { OrderDto } from './app-model/order-dto';
   providedIn: 'root'
 })
 export class CustomerService {
+  private status:boolean = localStorage.getItem('customerId')?true:false;
+  private loginStatus = new BehaviorSubject<boolean>(localStorage.getItem('customerId')?true:false);
+  currentStatus = this.loginStatus.asObservable();
+
+  changeStatus(status:boolean) {
+    this.loginStatus.next(status);
+  }
+
+  
+  private cartLength = new BehaviorSubject(Number)
 
   constructor(private httpClient: HttpClient) { }
 
