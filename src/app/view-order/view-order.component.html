@@ -14,13 +14,46 @@
               </div>
           </div>
           </div>
-          <div class="col-8">
-            <p class="card-text">Total Amount: Rs. {{o.amount}} /-</p>
-            <p class="card-text">Order Status: <span class="status">{{o.orderStatus}}</span></p>
-            <p class="card-text">Order date: {{o.orderedDateTime}}</p>
-            <p class="card-text">Arriving By: {{o.shippingDate}}</p>
-            <p class="card-text">TimeSlot Booked: {{o.timeslot}}</p>
-            <p class="card-text">Shipping Address: {{o.shippingAddress}}</p> 
+          <div class="card-box col col-lg-8 col-md-8 col-sm-12">
+            <div class="row">
+              <div class="col">
+                <!-- <p class="card-text">Total Amount: <span style="font-family: 'Poppins-Bold';">Rs. {{o.amount}} </span> /-</p> -->
+                <p class="card-text">Order ID: <span style="font-family: 'Poppins-Bold';">#{{o.orderId}} </span></p>
+              </div>
+              <div class="col">
+                <p class="card-text">Order Status: <span class="status">{{o.orderStatus}}</span></p>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col">
+                <p class="card-text">Order date: <span style="font-family: 'Poppins-Medium';">{{o.orderedDateTime | date}}</span></p>
+              </div>
+              <div class="col">
+                <p class="card-text">Arriving By: <span style="font-family: 'Poppins-Medium';">{{o.shippingDate | date:'fullDate'}}</span></p>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col col-lg-6">
+                <p class="card-text">Time: <span style="font-family: 'Poppins-Medium';">{{o.timeslot}}</span></p>
+              </div>
+              <div class="col col-lg-6">
+                <p class="card-text">Total Amount: <span style="font-family: 'Poppins-Bold'; font-size: 20px;">Rs.{{o.amount}}/-</span></p>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col col-lg-12">
+                <p class="card-text">Shipping Address: <span style="font-family: 'Poppins-Medium';">{{o.shippingAddress}}</span></p> 
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col offset-lg-9 offset-md-8">
+                <button class="btn btn-danger">Cancel Order</button>
+              </div>
+              
+            </div>
+            
+            
           </div>
         </div>
       </div>
