@@ -33,12 +33,14 @@
                 </div>
             </li> &nbsp; &nbsp;
             <li>
-                <button class="btn btn-sm" routerLink="/cart">
-                    <mat-icon matBadge={{cartLength}} matBadgeColor="warn" class="material-icons-outlined">
-                        shopping_bag  
-                    </mat-icon>
-                    <!-- <span class="badge badge-light">{{cartLength}}</span> -->
-                </button>
+                <div>
+                    <button class="btn btn-sm" (click)="cartPage()">
+                        <mat-icon matBadge={{cartLength}} matBadgeColor="warn" class="material-icons-outlined">
+                            shopping_bag  
+                        </mat-icon>
+                        <!-- <span class="badge badge-light">{{cartLength}}</span> -->
+                    </button>
+                </div>
             </li> &nbsp; &nbsp;
             
             <li *ngIf="!isLoggedIn">

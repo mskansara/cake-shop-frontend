@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerService } from '../customer.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -42,6 +43,22 @@ export class NavbarComponent implements OnInit {
     )
     
   }
+  cartPage(){
+    if(this.cartLength != 0){
+      this.router.navigateByUrl('/cart');
+    }
+    else{
+      //alert("No items in cart");
+      Swal.fire({
+        title: "Cart Empty!",
+         text:"Please add products to the cart",
+         icon: "warning",
+         confirmButtonText: "Okay"
+     });
+      this.router.navigateByUrl('/home');
+    }
+  }
+
 
   logout() {
     localStorage.removeItem('customerId');
