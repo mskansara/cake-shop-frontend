@@ -18,6 +18,7 @@ import { ViewOrderComponent } from './view-order/view-order.component';
 import { FooterComponent } from './footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     CheckoutComponent,
     ViewOrderComponent,
     FooterComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
