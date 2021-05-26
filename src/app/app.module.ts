@@ -19,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
 import { ChatComponent } from './chat/chat.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ChatComponent } from './chat/chat.component';
     ViewOrderComponent,
     FooterComponent,
     ChatComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,
