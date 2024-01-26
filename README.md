@@ -1,5 +1,7 @@
 # CakeShopFrontend
 
+The online cake shop project is a web-based platform designed to provide users with a seamless and convenient experience for ordering cakes online. This digital platform serves as a one-stop destination for individuals looking to celebrate special occasions or satisfy their sweet cravings with high-quality and customizable cakes.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
 ## Development server
